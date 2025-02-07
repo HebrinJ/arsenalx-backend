@@ -8,7 +8,8 @@ import {
   Delete,
 } from '@nestjs/common';
 import { BbmService } from './bbm.service';
-import { TBbmDataType } from 'src/types/units/armor/bbmDataType';
+//import { TBbmDataType } from 'src/types/units/armor/bbmDataType';
+import { Bbm } from 'src/units/bbm';
 
 type CreateEntryDto = {
   unitName: string;
@@ -24,7 +25,7 @@ export class BbmController {
   }
 
   @Patch('bbm/:id')
-  editBbmEntry(@Body() bbmDto: TBbmDataType, @Param('id') id: string) {
+  editBbmEntry(@Body() bbmDto: Bbm, @Param('id') id: string) {
     return this.bbmService.editBbmEntry(id, bbmDto);
   }
 

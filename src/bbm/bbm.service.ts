@@ -1,21 +1,20 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
-import { TBbmDataType } from 'src/types/units/armor/bbmDataType';
-import { readFileSync, writeFileSync } from 'fs';
+//import { TBbmDataType } from 'src/types/units/armor/bbmDataType';
+import { writeFileSync } from 'fs';
 import { join } from 'path';
 import { Bbm } from 'src/units/bbm';
+import { getDataFromFile } from 'src/utils/getDataFromFile';
 
 @Injectable()
 export class BbmService implements OnModuleInit {
-  private bbmList: Array<TBbmDataType> = [];
+  private bbmList: Array<Bbm> = [];
 
   onModuleInit() {
     this.loadBbmList();
   }
 
   loadBbmList() {
-    const filePath = join(__dirname, '..', '/jsondata', 'bbmData.json');
-    const jsonData = readFileSync(filePath, 'utf-8');
-    this.bbmList = JSON.parse(jsonData);
+    this.bbmList = getDataFromFile('bbmData.json');
   }
 
   clearBbmList() {
@@ -41,7 +40,7 @@ export class BbmService implements OnModuleInit {
     }
   }
 
-  editBbmEntry(id: string, newData: TBbmDataType) {
+  editBbmEntry(id: string, newData: Bbm) {
     this.bbmList = this.bbmList.map((unit) => {
       if (unit.id === id) {
         return newData;

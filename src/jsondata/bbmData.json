@@ -3,14 +3,82 @@
     "id": "bbm1",
     "group": "ARMOR",
     "type": "BBM",
-    "mainImage": "рпарпара",
+    "mainImage": "нет данных",
     "general": {
-      "unitName": "Some BBM",
-      "endOfDevelop": 0,
+      "unitName": "Unit1",
+      "endOfDevelopYear": "1900",
       "productionYears": "нет данных",
       "country": "нет данных",
       "developer": "нет данных",
-      "productCount": 0,
+      "productCount": "1000",
+      "classification": "нет данных",
+      "weight": "нет данных",
+      "layout": "нет данных",
+      "crew": "нет данных",
+      "cost": "нет данных"
+    },
+    "defence": {
+      "defenceType": "нет данных",
+      "thickness": "нет данных",
+      "defenceEquip": "нет данных",
+      "dynamicArmor": "нет данных",
+      "activeArmor": "нет данных"
+    },
+    "dimensions": {
+      "length": "нет данных",
+      "lengthWithGun": "нет данных",
+      "width": "нет данных",
+      "height": "нет данных",
+      "clearance": "нет данных"
+    },
+    "offensive": {
+      "mainGun": "нет данных",
+      "secondGun": "нет данных",
+      "caliber": "нет данных",
+      "gunType": "нет данных",
+      "stab": "нет данных",
+      "ammunition": "нет данных",
+      "ammunitionType": "нет данных",
+      "edges": "нет данных",
+      "aim": "нет данных",
+      "addition": "нет данных"
+    },
+    "mobility": {
+      "engine": "нет данных",
+      "power": "нет данных",
+      "specificPower": "нет данных",
+      "roadSpeed": "нет данных",
+      "offroadSpeed": "нет данных",
+      "roadRange": "нет данных",
+      "offroadRange": "нет данных",
+      "suspensionType": "нет данных",
+      "groundPress": "нет данных",
+      "ascentOver": "нет данных",
+      "ascentWall": "нет данных",
+      "ascentMoat": "нет данных",
+      "ascentFord": "нет данных"
+    },
+    "equipment": {
+      "radio": "нет данных",
+      "commandAim": "нет данных"
+    },
+    "description": "нет данных",
+    "gallery": [
+      ""
+    ]
+  },
+  {
+    "id": "bbm2",
+    "group": "ARMOR",
+    "type": "BBM",
+    "mainImage": "нет данных",
+    "general": {
+      "unitName": "Unit2",
+      "endOfDevelopYear": "1900",
+      "productionYears": "нет данных",
+      "country": "нет данных",
+      "developer": "нет данных",
+      "productCount": 1,
       "classification": "нет данных",
       "weight": "нет данных",
       "layout": "нет данных",
@@ -71,82 +139,14 @@
     "id": "bbm3",
     "group": "ARMOR",
     "type": "BBM",
-    "mainImage": "нет данных",
+    "mainImage": "hgfh",
     "general": {
-      "unitName": "new bbm",
-      "endOfDevelop": 0,
+      "unitName": "Unit3",
+      "endOfDevelopYear": 1900,
       "productionYears": "нет данных",
       "country": "нет данных",
       "developer": "нет данных",
-      "productCount": 0,
-      "classification": "нет данных",
-      "weight": "нет данных",
-      "layout": "нет данных",
-      "crew": "нет данных",
-      "cost": "нет данных"
-    },
-    "defence": {
-      "defenceType": "нет данных",
-      "thickness": "нет данных",
-      "defenceEquip": "нет данных",
-      "dynamicArmor": "нет данных",
-      "activeArmor": "нет данных"
-    },
-    "dimensions": {
-      "length": "нет данных",
-      "lengthWithGun": "нет данных",
-      "width": "нет данных",
-      "height": "нет данных",
-      "clearance": "нет данных"
-    },
-    "offensive": {
-      "mainGun": "нет данных",
-      "secondGun": "нет данных",
-      "caliber": "нет данных",
-      "gunType": "нет данных",
-      "stab": "нет данных",
-      "ammunition": "нет данных",
-      "ammunitionType": "нет данных",
-      "edges": "нет данных",
-      "aim": "нет данных",
-      "addition": "нет данных"
-    },
-    "mobility": {
-      "engine": "нет данных",
-      "power": "нет данных",
-      "specificPower": "нет данных",
-      "roadSpeed": "нет данных",
-      "offroadSpeed": "нет данных",
-      "roadRange": "нет данных",
-      "offroadRange": "нет данных",
-      "suspensionType": "нет данных",
-      "groundPress": "нет данных",
-      "ascentOver": "нет данных",
-      "ascentWall": "нет данных",
-      "ascentMoat": "нет данных",
-      "ascentFord": "нет данных"
-    },
-    "equipment": {
-      "radio": "нет данных",
-      "commandAim": "нет данных"
-    },
-    "description": "нет данных",
-    "gallery": [
-      ""
-    ]
-  },
-  {
-    "id": "bbm4",
-    "group": "ARMOR",
-    "type": "BBM",
-    "mainImage": "нет данных",
-    "general": {
-      "unitName": "гнеген",
-      "endOfDevelop": 0,
-      "productionYears": "нет данных",
-      "country": "нет данных",
-      "developer": "нет данных",
-      "productCount": 0,
+      "productCount": "1",
       "classification": "нет данных",
       "weight": "нет данных",
       "layout": "нет данных",

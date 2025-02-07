@@ -1,3 +1,5 @@
+import { ARMOR, BBM } from 'src/constants/unitTypesConstants';
+
 export class Bbm {
   id: string;
   group: string;
@@ -5,7 +7,7 @@ export class Bbm {
   mainImage: string;
   general: {
     unitName: string;
-    endOfDevelop: number;
+    endOfDevelopYear: number;
     productionYears: string;
     country: string;
     developer: string;
@@ -66,16 +68,16 @@ export class Bbm {
 
   constructor(id: string, unitName: string) {
     this.id = id;
-    this.group = 'ARMOR';
-    this.type = 'BBM';
+    this.group = ARMOR;
+    this.type = BBM;
     this.mainImage = 'нет данных';
     this.general = {
       unitName: unitName,
-      endOfDevelop: 0,
+      endOfDevelopYear: 1900,
       productionYears: 'нет данных',
       country: 'нет данных',
       developer: 'нет данных',
-      productCount: 0,
+      productCount: 1,
       classification: 'нет данных',
       weight: 'нет данных',
       layout: 'нет данных',
