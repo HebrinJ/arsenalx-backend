@@ -1,0 +1,42 @@
+[
+    { 
+        "id": "1",
+        "group": "ARMOR",
+        "type": "TANK",
+        "year": 1917,
+        "company": "Company name",
+        "country": "USSR",
+        "image": "https://w-dog.ru/wallpapers/7/14/342895325755779/tank-oruzhie-armiya.jpg",
+        "name": "Т-34"
+    },
+    { 
+        "id": "2",
+        "group": "ARMOR",
+        "type": "TANK",
+        "year": 1917,
+        "company": "Company name",
+        "country": "USSR",
+        "image": "https://w-dog.ru/wallpapers/7/14/342895325755779/tank-oruzhie-armiya.jpg",
+        "name": "Т-26"
+    },
+    { 
+        "id": "3",
+        "group": "ARMOR",
+        "type": "TANK",
+        "year": 1917,
+        "company": "Company name",
+        "country": "USSR",
+        "image": "https://w-dog.ru/wallpapers/7/14/342895325755779/tank-oruzhie-armiya.jpg",
+        "name": "Т-44"
+    },
+    { 
+        "id": "4",
+        "group": "ARMOR",
+        "type": "BBM",
+        "year": 1917,
+        "company": "Company name",
+        "country": "USSR",
+        "image": "https://w-dog.ru/wallpapers/7/14/342895325755779/tank-oruzhie-armiya.jpg",
+        "name": "Armor Car"
+    }
+]
