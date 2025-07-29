@@ -3,7 +3,7 @@ import { Injectable, OnModuleInit } from '@nestjs/common';
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 import { Bbm } from 'src/units/bbm';
-import { getDataFromFile } from 'src/utils/getDataFromFile';
+import { getDataFromFile, getDataFromFileAsync } from 'src/utils/getDataFromFile';
 
 @Injectable()
 export class BbmService implements OnModuleInit {
@@ -41,29 +41,35 @@ export class BbmService implements OnModuleInit {
   }
 
   editBbmEntry(id: string, newData: Bbm) {
-    this.bbmList = this.bbmList.map((unit) => {
+    const newBbmList = this.bbmList.map((unit) => {
       if (unit.id === id) {
+        newData.mainImage = unit.mainImage;
+        newData.cardImage = unit.cardImage;
         return newData;
       }
       return unit;
     });
-    this.saveDataToFile();
+
+    this.saveData(newBbmList);
   }
 
   addNewEmptyEntry(unitName: string) {
     const newUnit = this.createNewEmptyEntry(unitName);
     this.bbmList.push(newUnit);
-    this.saveDataToFile();
+    //this.saveDataToFile();
+    this.saveData(this.bbmList);
   }
 
   removeBbm(id: string) {
     const indexToRemove = this.bbmList.findIndex((unit) => unit.id === id);
     this.bbmList.splice(indexToRemove, 1);
-    this.saveDataToFile();
+    //this.saveDataToFile();
+    this.saveData(this.bbmList);
   }
 
   saveDataToFile() {
     try {
+      console.log('saveDataToFileFunction');
       const filePath = join(__dirname, '..', '/jsondata', 'bbmData.json');
       const jsonData = JSON.stringify(this.bbmList, null, 2);
       writeFileSync(filePath, jsonData, 'utf-8');
@@ -104,5 +110,71 @@ export class BbmService implements OnModuleInit {
     const newEmptyBbm = new Bbm(newId, unitName);
 
     return newEmptyBbm;
+  }
+
+  async loadData() {
+    return await getDataFromFileAsync('bbmData.json');
+  }
+
+  saveData(bbmList: Array<Bbm>) {
+    try {
+      const filePath = join(__dirname, '..', '/jsondata', 'bbmData.json');
+      const jsonData = JSON.stringify(bbmList, null, 2);
+      writeFileSync(filePath, jsonData, 'utf-8');
+
+      // DEV сохранение
+      writeFileSync('F:/Work/ArsenalX/backend/arsenalx-back/src/jsondata/bbmData.json', jsonData, 'utf-8');
+      //
+
+      // Тестовая запись нового поля в отдельный фаил. Это работает
+      // const testData = bbmList[0];
+      // const arr = [testData, bbmList[1], bbmList[2], bbmList[3]];
+      // const testJson = JSON.stringify(arr, null, 2);
+      // writeFileSync('F:/Work/ArsenalX/backend/arsenalx-back/src/jsondata/test.json', jsonData, 'utf-8');
+      //
+
+      this.reloadBbmList();
+    } catch (error) {
+      console.error('Ошибка при сохранении данных:', error);
+    }
+  }
+
+  async setMainImage(id: string, imageName: string) {
+    const filePath = `http://localhost:3001/images/bbm/${imageName}`;
+
+    const bbmList: Array<Bbm> = await this.loadData();
+
+    const newBbmList = bbmList.map((unit) => {
+      if (unit.id === id) {
+        const newUnit = { ...unit, mainImage: filePath };
+        return newUnit;
+      }
+      return unit;
+    });
+
+    this.saveData(newBbmList);
+  }
+
+  async setCardImage(id: string, imageName: string) {
+    const filePath = `http://localhost:3001/images/bbm/${imageName}`;
+
+    const bbmList: Array<Bbm> = await this.loadData();
+
+    const newBbmList = bbmList.map((unit) => {
+      if (unit.id === id) {
+        const newUnit = { ...unit, cardImage: filePath };
+        return newUnit;
+      }
+      return unit;
+    });
+
+    this.saveData(newBbmList);
+  }
+
+  async getImagePath(id: string) {
+    const bbmList: Array<Bbm> = await this.loadData();
+
+    const unit = bbmList.find((item) => item.id === id);
+    return unit?.mainImage;
   }
 }

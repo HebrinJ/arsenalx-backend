@@ -5,6 +5,7 @@ export class Bbm {
   group: string;
   type: string;
   mainImage: string;
+  cardImage: string;
   general: {
     unitName: string;
     endOfDevelopYear: number;
@@ -48,6 +49,7 @@ export class Bbm {
     engine: string;
     power: string;
     specificPower: string;
+    drive: string;
     roadSpeed: string;
     offroadSpeed: string;
     roadRange: string;
@@ -71,6 +73,7 @@ export class Bbm {
     this.group = ARMOR;
     this.type = BBM;
     this.mainImage = 'нет данных';
+    this.cardImage = 'нет данных';
     this.general = {
       unitName: unitName,
       endOfDevelopYear: 1900,
@@ -114,6 +117,7 @@ export class Bbm {
       engine: 'нет данных',
       power: 'нет данных',
       specificPower: 'нет данных',
+      drive: 'нет данных',
       roadSpeed: 'нет данных',
       offroadSpeed: 'нет данных',
       roadRange: 'нет данных',

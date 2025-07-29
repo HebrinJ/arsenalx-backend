@@ -6,7 +6,7 @@ type TCardType = {
   id: string;
   group: string;
   type: string;
-  mainImage: string;
+  cardImage: string;
   general: {
     endOfDevelopYear: number;
     developer: string;
@@ -27,7 +27,7 @@ export function getCardListByType(type: string): Array<Card> {
       unit.general.endOfDevelopYear,
       unit.general.developer,
       unit.general.country,
-      unit.mainImage,
+      unit.cardImage,
       unit.general.unitName,
     );
     validateFields(card);
