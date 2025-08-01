@@ -1,9 +1,11 @@
 import { Bbm } from 'src/units/bbm';
 import { writeFileSync } from 'fs';
+import { Injectable } from '@nestjs/common';
 import { join } from 'path';
-import { getDataFromFile, getDataFromFileAsync } from 'src/utils/getDataFromFile';
+import { getDataFromFileAsync } from 'src/utils/getDataFromFile';
 import { DEV_LOCAL_JSON_BBMDATA } from 'src/utils/localRoutes';
 
+@Injectable()
 export class BbmDataRepo {
   private data: Bbm[] = [];
 

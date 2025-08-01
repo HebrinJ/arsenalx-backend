@@ -51,7 +51,8 @@ export class BbmController {
   @UseInterceptors(FileInterceptor('file'))
   async uploadMainImageFile(
     @UploadedFile() file: Express.Multer.File,
-    @Body() body: any) {
+    @Body() body: any,
+  ) {
     this.uploadImageFile(file, body, 'mainImage');
   }
 
@@ -59,7 +60,8 @@ export class BbmController {
   @UseInterceptors(FileInterceptor('file'))
   async uploadCardImageFile(
     @UploadedFile() file: Express.Multer.File,
-    @Body() body: any) {
+    @Body() body: any,
+  ) {
     this.uploadImageFile(file, body, 'cardImage');
   }
 

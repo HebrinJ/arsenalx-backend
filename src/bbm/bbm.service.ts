@@ -1,18 +1,18 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { Bbm } from 'src/units/bbm';
 import { LOCAL_SERVER } from 'src/utils/localRoutes';
-import { BbmDataRepo } from './bbm.repo';
 
 export interface IBbmDataRepo {
   getData(): Promise<Readonly<Bbm[]>>;
   addNewBbm(newBbm: Bbm): Promise<void>;
   removeBbm(indexToRemove: number): Promise<void>;
-  saveData(bbmData: Bbm[]): void;
+  editBbmEntry(id: string, newData: Bbm): Promise<void>;
+  saveData(bbmData: Bbm[]): Promise<void>;
 }
 
 @Injectable()
 export class BbmService {
-  constructor(private repo: IBbmDataRepo) {}
+  constructor(@Inject('IBbmDataRepo') private repo: IBbmDataRepo) {}
 
   getBbmList() {
     return this.repo.getData();
@@ -32,7 +32,7 @@ export class BbmService {
   async editBbmEntry(id: string, newData: Bbm) {
     const bbmList = await this.repo.getData();
     const newBbmList = bbmList.map((unit) => {
-      // Условие сохраняет данные о изображениях, т.к. они изменяются отдельно
+      // Условие сохраняет данные об изображениях, т.к. они изменяются отдельно
       if (unit.id === id) {
         return {
           ...newData,
@@ -113,11 +113,4 @@ export class BbmService {
 
     this.repo.saveData(newBbmList);
   }
-
-  // getImagePath(id: string) {
-  //   const bbmList = this.repo.getData();
-
-  //   const unit = bbmList.find((item) => item.id === id);
-  //   return unit?.mainImage;
-  // }
 }
